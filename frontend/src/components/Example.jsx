@@ -36,6 +36,7 @@ class Example extends Component {
           <h2>Welcome to the awesome test component!</h2>
           <p>
             <Link to="/contact">Click Here</Link> to go nowhere!
+            <Link to="/about">Click Here</Link> to go where!
           </p>
         </div>
         <hr />
