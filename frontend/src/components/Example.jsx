@@ -19,7 +19,7 @@ class Example extends Component {
     this.setState({text: thing.text, updateThingId: id});
   }
 
-  submitNote = (e) => {
+  submitThing = (e) => {
     e.preventDefault();
     if (this.state.updateThingId === null) {
       this.props.addThing(this.state.text);
