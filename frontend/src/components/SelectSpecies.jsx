@@ -34,7 +34,7 @@ class SelectSpecies extends Component {
 	render() {
 
 	return (
-		<div>
+		<div className="selectSpecies">
 			<label>Species
 			<Select
 				name="species"

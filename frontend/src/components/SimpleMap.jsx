@@ -15,7 +15,7 @@ class SimpleMap extends Component {
     super(props);
     this.state = {
       value: '',
-      hideMap: true
+      map: false
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -35,27 +35,44 @@ class SimpleMap extends Component {
     });
   }
 
+  openCloseMap = (event) => {
+    var flipMap = !this.state.map;
+    this.setState({
+      map: flipMap
+    })
+  }
+
   render() {
+
+    var mapClass = "closed";
+    this.state.map===true ? mapClass = "open" : mapClass = "closed";
+
     return (
       // Important! Always set the container height explicitly
-      <div>
-        <label>Input coordinates or click map location</label>
+      <div className="simpleMap">
+        <label>Input coordinates or use the map</label>
         <input
-  				value={this.state.value}
-  				placeholder="Latitude, Longitude"
+          value={this.state.value}
+          placeholder="Latitude, Longitude"
           onChange = {this.handleChange} 
           pattern="(((-|)\d*\.\d*)|((-|)\d*(\.|,)\d*))"/>
-        <div style={{ height: '500px', width: '500px' }}>
-          <GoogleMapReact
-            bootstrapURLKeys={{ key: 'AIzaSyBMA66vEKthk8tNBUD3HetjzZhp6C5HUg0' }}
-            defaultCenter={this.props.center}
-            defaultZoom={this.props.zoom}
-            onClick={this.onClicking} >
-            <AnyReactComponent
-              lat={0}
-              lng={0}
-              zoom={1} />
-          </GoogleMapReact>
+        <div className="mapToggle" onClick={this.openCloseMap}>
+          {this.state.map===true ? "Hide Map" : "Show Map"}
+        </div> 
+        <div className={mapClass + " mapContainer"}>
+          <div className={"fixedMapContainer"}>
+            <GoogleMapReact
+              bootstrapURLKeys={{ key: 'AIzaSyBMA66vEKthk8tNBUD3HetjzZhp6C5HUg0' }}
+              defaultCenter={this.props.center}
+              defaultZoom={this.props.zoom}
+              onClick={this.onClicking} >
+              <AnyReactComponent
+                lat={0}
+                lng={0}
+                zoom={1} />
+            </GoogleMapReact>
+          </div>
+          <div className={"mapSpacer"}></div>
         </div>
       </div>
     );

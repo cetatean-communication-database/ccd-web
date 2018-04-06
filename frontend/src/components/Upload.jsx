@@ -7,14 +7,14 @@ import SelectSpecies from './SelectSpecies.jsx';
 class Upload extends Component {
 
 	formGetter(){
-		return new FormData(document.getElementById('customForm'));
+		return new FormData(document.getElementById('fileUpload'));
 	}
 
 	customFormRenderer(onSubmit){
 		return (
-		  <form id='customForm' style={{marginBottom: '15px'}}>
-		    <input type="file" name='file' id="exampleInputFile" />
-		    <button type="button" onClick={onSubmit}>Upload</button>
+		  <form id='fileUpload'>
+		    <div><label htmlFor="inputFile">Choose File</label><input type="file" name='file' id="inputFile" /></div>
+		    <div className="buttonWrapper"><button type="button" onClick={onSubmit}>Upload</button></div>
 		  </form>
 		);
 	}
@@ -34,12 +34,27 @@ class Upload extends Component {
 		        />
 				<SelectSpecies />
 		    	<SimpleMap/>
-		    	<input 
-		    		type="date"
-		    		required
-		    		pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
-		    	<input
-		    		defaultValue="Song" />
+		    	<div className="dateCommEquip">
+			    	<label htmlFor="recordingDate" className="recordingDate">Date of Recording
+			    	<input 
+			    		type="date"
+			    		required
+			    		pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+			    		id="recordingDate" /></label>
+			    	<label htmlFor="communicationType" className="communicationType">Communication Type <em>(Song, Vocalizations)</em>
+			    	<input
+			    		defaultValue="Song" 
+			    		id="communicationType" /></label>
+			    	<label htmlFor="equipmentUsed" className="equipmentUsed">Equipment Used
+		    		<input
+			    		type="text"
+			    		placeholder="Model of Hydrophone, recording device..."
+			    		id="equipmentUsed" /></label>
+			    </div>
+		    	<label htmlFor="description" className="description">Description of Recording
+		    	<textarea className="Description" id="description" /></label>
+		    	<button type="button">Add recording to Database</button>
+
 			</div>
 		)
 	}

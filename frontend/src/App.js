@@ -14,16 +14,18 @@ let store = createStore(ccdApp);
 class App extends Component {
   render() {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Example} />
-          <Route path="/about" component={About} />
-          <Route path="/upload" component={Upload} />
-          <Route component={NotFound} />
-        </Switch>
-      </BrowserRouter>
-    </Provider>  
+    <div className="coastLine">
+      <Provider store={store}>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Example} />
+            <Route path="/about" component={About} />
+            <Route path="/upload" component={Upload} />
+            <Route component={NotFound} />
+          </Switch>
+        </BrowserRouter>
+      </Provider>
+    </div>
   );
   }
 }
