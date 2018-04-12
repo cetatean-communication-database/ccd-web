@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import Criteria from './Criteria.jsx';
 import ResultsList from './ResultsList.jsx';
 
-interface SearchState {
-  allSongs: Song[],
-  filteredSongs: Song[],
-  criteria: string;
-}
+
 class Search extends Component {
 
 
