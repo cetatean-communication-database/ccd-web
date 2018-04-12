@@ -33,7 +33,7 @@ class Example extends Component {
     return (
       <div>
         <div>
-          <h2>Welcome to the awesome test component!</h2>
+          <h2>Welcome to the test component!</h2>
           <p>
             <Link to="/contact">Click Here</Link> to go nowhere!
             <Link to="/about">Click Here</Link> to go where!
