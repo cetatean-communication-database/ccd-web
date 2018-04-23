@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import Waveform from './Waveform'
+
+
 
 class ResultsList extends Component {
 
@@ -8,6 +11,7 @@ class ResultsList extends Component {
 		file: '/sample_assets/humpback1.mp3',
 		species: 'Humpback Whale, Megaptera novaeangliae',
 		date: '2018-21-08',
+		user: 'Dan Vallentyne',
 		population: 'Atlantic',
 		communication: 'Song',
 		location: '21.329294,-71.2072321',
@@ -19,6 +23,7 @@ class ResultsList extends Component {
 		file: '/sample_assets/humpback2.aac',
 		species: 'Humpback Whale, Megaptera novaeangliae',
 		date: '2017-14-06',
+		user: 'Sparrow Sailfish',
 		population: 'Pacific',
 		communication: 'Song',
 		location: '-32.264564, 63.432123',
@@ -30,6 +35,7 @@ class ResultsList extends Component {
 		file: '/sample_assets/stripeddolphin.wav',
 		species: 'Striped Dolphin, Stenella coeruleoalba',
 		date: '2017-21-08',
+		user: 'bubbles',
 		population: '',
 		communication: 'Signal',
 		location: '-12.345732, 12.235466',
@@ -42,6 +48,7 @@ class ResultsList extends Component {
 			<ul>
 				{ResultsList.allSongs.map(song => (				
 					<li key={song.id}>
+						<Waveform src={song.file} />
 						{song.species},
 						{song.date},
 						{song.population},
