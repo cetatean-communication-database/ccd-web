@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Route, Switch, BrowserRouter} from 'react-router-dom';
-import Example from "./components/Example";
 import NotFound from "./components/NotFound";
 import About from "./components/About";
 import Upload from "./components/Upload";

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
 import NavBar from './NavBar';
 import ResultsList from './ResultsList';
 
