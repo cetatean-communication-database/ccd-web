@@ -11,7 +11,7 @@ class Intro extends Component {
 
 			<div className="ocean">
 				<NavBar />
-				<ResultsList />
+				<ResultsList loadSong="random" />
 
 				<h1>COMMUNICATION DATABASE</h1>
 				<h2>A public database for humpback whale song and other recordings of Cetacean communication.</h2>

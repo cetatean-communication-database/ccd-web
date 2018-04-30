@@ -42,26 +42,30 @@ class ResultsList extends Component {
 		equipment: 'Aquarian Audio H1a Hydrophone',
 		description: 'This recording of dolphins that came off the bow of our sailboat, the Mariposa dos. What a lucky time to be alive that we can witness these magnificant creatuers living alongside us. The recording quality is not great as we struggled to get a clean sound against the backdrop of the boat. The line was lowered to 5 meters off the bow'
 	}];
-	
-	render() {
+
+	displaySong(song) {
 		return(
-			<ul>
-				{ResultsList.allSongs.map(song => (				
-					<li key={song.id}>
-						<Waveform src={song.file} />
-						{song.species},
-						{song.date},
-						{song.population},
-						{song.communication},
-						{song.location},
-						{song.equipment},
-						{song.description}
-					</li>
-				))}
-			</ul>
+			<li key={song.id}>
+				<Waveform src={song.file} />
+				{song.species},
+				{song.date},
+				{song.population},
+				{song.communication},
+				{song.location},
+				{song.equipment},
+				{song.description}
+			</li>
 		)
 	}
-
+	
+	render() {
+		if(this.props.loadSong === 'random') {
+			const song = ResultsList.allSongs[Math.floor(Math.random*3)];		
+			return <ul>{this.displaySong(song)}</ul>
+		} else if(this.props.loadSong === 'all') {
+			return <ul>{ResultsList.allSongs.map(song => this.displaySong(song))}</ul>
+		}
+	}
 }
 
 export default ResultsList;
