@@ -5,6 +5,7 @@ import About from "./components/About";
 import Upload from "./components/Upload";
 import Search from "./components/Search";
 import Intro from "./components/Intro";
+import NavBar from "./components/NavBar";
 
 import { Provider } from "react-redux";
 import { createStore } from "redux";
@@ -16,6 +17,7 @@ class App extends Component {
   render() {
   return (
     <div className="ocean">
+      <NavBar />
       <Provider store={store}>
         <BrowserRouter>
           <Switch>

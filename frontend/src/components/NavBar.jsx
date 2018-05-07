@@ -8,6 +8,7 @@ class NavBar extends Component {
 
     	<div className="epipelagic">
     		<nav>
+                <a href="/">Home</a>
     			<a href="/about">About</a>
     			<a href="/upload">Upload</a>
     			<a href="/search">Search</a>

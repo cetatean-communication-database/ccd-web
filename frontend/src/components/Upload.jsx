@@ -22,7 +22,7 @@ class Upload extends Component {
 	render() {
 
 		return (
-			<div>
+			<div className="coastLine">
 				<h1>Add a recording to the Cetacean Communication Database</h1>
 				<FileUploadProgress key='ex1' url='http://localhost:3000/api/upload'
 					onProgress={(e, request, progress) => {console.log('progress', e, request, progress);}}
