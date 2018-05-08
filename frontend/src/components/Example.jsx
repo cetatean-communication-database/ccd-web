@@ -2,12 +2,19 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
+import Waveform from './Waveform'
+
 import {example} from "../actions";
 
 class Example extends Component {
-  state = {
-    text: "",
-    updateThingId: null,
+
+  constructor(props) {
+    super(props);
+ 
+    this.state = {
+      text: "",
+      updateThingId: null,
+    };
   }
 
   resetForm = () => {
@@ -40,6 +47,8 @@ class Example extends Component {
           </p>
         </div>
         <hr />
+
+          <Waveform src={'/sample_assets/humpback1.mp3'} />
 
         <div>
           <h3>Add new things!!!</h3>
